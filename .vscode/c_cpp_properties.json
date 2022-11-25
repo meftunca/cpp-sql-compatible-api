@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "name": "initial",
+      "compileCommands": "${workspaceFolder}/compile_commands.json",
+      "macFrameworkPath": [
+        "/System/Library/Frameworks",
+        "/Library/Frameworks"
+      ],
+      "cppStandard": "c++17",
+      "cStandard": "c17"
+    }
+  ],
+  "version": 4
+}

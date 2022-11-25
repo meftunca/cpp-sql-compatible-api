@@ -1,0 +1,51 @@
+// Modified to enable debugging using bazel
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Bazel Build (Debug)",
+      "type": "shell",
+      "command": "ls;bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -c dbg --copt=\"-g\" -s",
+      "windows": {
+        "command": "bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data --experimental_enable_runfiles -c dbg --copt=\"-g\"  -s"
+      },
+      "osx": {
+        "command": "ls;bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -c dbg --copt=\"-g\"  --spawn_strategy=local -s",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "Bazel Build (Run)",
+      "type": "shell",
+      "command": "bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -s",
+      "windows": {
+        "command": "bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -s"
+      },
+      "osx": {
+        "command": "bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -s",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "Bazel Build (Run Opt)",
+      "type": "shell",
+      "command": "bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -c opt -s",
+      "windows": {
+        "command": "bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -c opt -s"
+      },
+      "osx": {
+        "command": "bazel build --cxxopt='-std=c++17' src:sondb --action_env=workdir=$(PWD)/Data -c opt -s",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    }
+  ]
+}
