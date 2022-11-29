@@ -5,19 +5,7 @@
     "//externals:faker",
     // ! Testing
     "//tests:testing",
-    // // ! Benchmark
-    // // "//benchmark:benchmark",
-    // // ! Sources
-    // "//src/portals:portals",
-    // "//src/socket:socket",
-    // "//src/utils:utils",
-    // "//src/fs_structure:fs-structure",
-    // "//src/indexing:indexing",
-    // "//src/store:store",
-    // "//src/cache:cache",
-    // "//src/config:config",
-    // // "//src/logging:logging",
-    // "//src/operations:operations"
+    "//benchmark:bench_test",
   ],
   "bsv.bazel.testFlags": [],
   "bsv.bzl.lsp.enableCodelensTest": true,

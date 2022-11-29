@@ -49,5 +49,5 @@ analyze-profiling:
 test:
 	bazel test --cxxopt='-std=c++17' --config debug  --test_output=all --test_arg=--verbose //tests:testing --test_env=WORKDIR=$(PWD)/Data --spawn_strategy=local
 bench:
-	bazel build --cxxopt='-std=c++17' //benchmark:benchmark --action_env=WORKDIR=$(PWD)/Data --spawn_strategy=local -c opt --copt=-O3 --cxxopt=-O3
-	bazel-bin/benchmark/benchmark --benchmark_format=console --benchmark_out="benchmark/benchmark__$(TIMESTAMP).json" --benchmark_out_format=json
+	bazel build --cxxopt='-std=c++17' //benchmark:bench_test --action_env=WORKDIR=$(PWD)/Data --spawn_strategy=local -c opt --copt=-O3 --cxxopt=-O3
+	bazel-bin/benchmark/bench_test --benchmark_counters_tabular=true --benchmark_format=console --benchmark_out="benchmark/benchmark__$(TIMESTAMP).json" --benchmark_out_format=json

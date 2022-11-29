@@ -3,7 +3,7 @@ load("@rules_cc//cc:defs.bzl", "cc_binary")
 package(default_visibility = ["//visibility:public"])
 
 cc_binary(
-    name = "benchmark",
+    name = "bench_test",
     # srcs = ["main.cc"],
     # hdrs = ["hello-time.h"],
     srcs = glob(["*.cc","**/*.cc"]),
